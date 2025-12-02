@@ -8,9 +8,46 @@
   </head>
   <body>
     <header>
+      <div class="user-icon-container">
+        <button id="user-icon" class="user-icon" title="Teacher Login">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+          </svg>
+        </button>
+        <span id="user-status" class="user-status hidden"></span>
+      </div>
       <h1>Mergington High School</h1>
       <h2>Extracurricular Activities</h2>
     </header>
+
+    <!-- Login Modal -->
+    <div id="login-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h3>Teacher Login</h3>
+        <form id="login-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" required />
+          </div>
+          <button type="submit">Login</button>
+        </form>
+        <div id="login-message" class="hidden"></div>
+      </div>
+    </div>
+
+    <!-- Logout Modal -->
+    <div id="logout-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-btn-logout">&times;</span>
+        <h3>Logged in as <span id="logged-in-username"></span></h3>
+        <button id="logout-btn" class="logout-button">Logout</button>
+      </div>
+    </div>
 
     <main>
       <section id="activities-container">
